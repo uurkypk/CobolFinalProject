@@ -1,0 +1,16 @@
+10004944-UPDATE    -RC:00  KAYIT GUNCELLENDI             OR HUN         ORHUN          KAS            KES
+10002942-UPDATE    -RC:00  KAYIT GUNCELLENDI             MEHM ET        MEHMET         AYDIN          EYDIN
+10001941-UPDATE    -RC:00  KAYIT GUNCELLENDI             MU STA FA      MUSTAFA        YILMAZ         YILMEZ
+10003943-UPDATE    -RC:00  KAYIT GUNCELLENDI             AHMET          AHMET          KAVAKLI        KEVEKLI
+10015982-UPDATE    -RC:00  KAYIT GUNCELLENDI             A R D A        ARDA           SAKE           SEKI
+10021566-WRITE     -RC:00  KAYIT EKLENDI                 UGUR                          KAYPAK
+10002942-READ      -RC:00  KAYIT OKUNDU                  MEHMET                        EYDIN
+10001941-READ      -RC:00  KAYIT OKUNDU                  MUSTAFA                       YILMEZ
+10004944-READ      -RC:00  KAYIT OKUNDU                  ORHUN                         KES
+10003943-DELETE    -RC:00  KAYIT SILINDI                 AHMET                         KEVEKLI
+10003943-READ      -RC:23  KAYIT BULUNAMADI
+10015982-READ      -RC:00  KAYIT OKUNDU                  ARDA                          SEKI
+10015987-READ      -RC:23  KAYIT BULUNAMADI
+10015987-UPDATE    -RC:23  KAYIT BULUNAMADI
+10015987-DELETE    -RC:23  KAYIT BULUNAMADI
+O:GECERSIZ ISLEM TIPI
