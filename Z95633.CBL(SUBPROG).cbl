@@ -77,6 +77,9 @@
            IF WS-DISHATD
               DISPLAY 'INVALID'
            END-IF.
+           IF NOT WS-DISHATD
+              DISPLAY 'NOT INVALID'
+           END-IF.
            PERFORM CLOSE-FILE.
            GOBACK.
 
@@ -171,6 +174,7 @@
            MOVE    SPACES    TO   LS-LNAME-TO.
 
        NOT-INVALID-PAR.
+           MOVE    0         TO   WS-DISHAT.
            MOVE    00        TO   LS-SUB-RC.
            MOVE    IDX-FNAME TO   LS-FNAME-FROM.
            MOVE    SPACES    TO   LS-FNAME-TO.
