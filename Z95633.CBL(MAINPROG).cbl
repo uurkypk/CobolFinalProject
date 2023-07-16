@@ -95,13 +95,12 @@
            MOVE INP-ID           TO  OUT-ID.
            MOVE INP-DVZ          TO  OUT-DVZ.
            MOVE WS-SUB-RC        TO  OUT-RETURN-CODE.
-      *    MOVE WS-SUB-DATA      TO  OUT-ACIKLAMA.
            MOVE WS-FNAME-FROM    TO  OUT-FNAME-FROM.
            MOVE WS-FNAME-TO      TO  OUT-FNAME-TO.
            MOVE WS-LNAME-FROM    TO  OUT-LNAME-FROM.
            MOVE WS-LNAME-TO      TO  OUT-LNAME-TO.
            MOVE '-'              TO  OUT-FIL.
-           MOVE '-RC:'        TO  OUT-FIL2.
+           MOVE '-RC:'           TO  OUT-FIL2.
            PERFORM H400-ISLEM-KONT.
 
        H400-ISLEM-KONT.
@@ -113,7 +112,6 @@
                     ELSE
                        MOVE 'KAYIT OKUNDU'     TO OUT-ACIKLAMA
                     END-IF,
-                    SET WS-FUNC-READ TO TRUE
                     MOVE 'READ' TO OUT-ISLEM-TIPI,
                  WHEN 'U'
                     IF WS-SUB-RC = 23
@@ -121,7 +119,6 @@
                     ELSE
                        MOVE 'KAYIT GUNCELLENDI' TO OUT-ACIKLAMA
                     END-IF
-                    SET WS-FUNC-UPDATE TO TRUE
                     MOVE 'UPDATE' TO OUT-ISLEM-TIPI,
                  WHEN 'W'
                     IF WS-SUB-RC = 23
@@ -129,7 +126,6 @@
                     ELSE
                        MOVE 'KAYIT EKLENDI'    TO OUT-ACIKLAMA
                     END-IF
-                    SET WS-FUNC-WRITE TO TRUE
                     MOVE 'WRITE' TO OUT-ISLEM-TIPI
                  WHEN 'D'
                     IF WS-SUB-RC = 23
@@ -137,7 +133,6 @@
                     ELSE
                        MOVE 'KAYIT SILINDI'    TO OUT-ACIKLAMA
                     END-IF
-                    SET WS-FUNC-READ TO TRUE
                     MOVE 'DELETE' TO OUT-ISLEM-TIPI
               END-EVALUATE
               WRITE OUT-REC

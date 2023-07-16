@@ -33,6 +33,8 @@
        01 WS-IDX-FLAG.
           03 IDX-ST               PIC 9(02).
              88 IDX-ST-SUCC       VALUE 00 97.
+       01 WS-DISHAT               PIC 9.
+          88 WS-DISHATD           VALUE 1.
        01 WS-UPDP.
           03 WS-FNAMET            PIC X(15).
           03 WS-UNSTR             PIC 9(3).
@@ -72,6 +74,9 @@
               WHEN OTHER
                  DISPLAY "GECERSIZ"
            END-EVALUATE.
+           IF WS-DISHATD
+              DISPLAY 'INVALID'
+           END-IF.
            PERFORM CLOSE-FILE.
            GOBACK.
 
@@ -145,10 +150,10 @@
            END-WRITE.
 
        INIT-PAR.
-            MOVE SPACES      TO WS-IDX-REC
-            MOVE SPACES      TO WS-NAMEB
-            MOVE   1         TO WS-STRPOI
-            MOVE   1         TO WS-UNSTR.
+           MOVE SPACES      TO WS-IDX-REC
+           MOVE SPACES      TO WS-NAMEB
+           MOVE   1         TO WS-STRPOI
+           MOVE   1         TO WS-UNSTR.
 
        OPEN-PAR.
            OPEN I-O IDX-FILE
@@ -158,6 +163,7 @@
            END-IF.
 
        INVALID-PAR.
+           SET WS-DISHATD    TO   TRUE.
            MOVE    23        TO   LS-SUB-RC.
            MOVE    SPACES    TO   LS-FNAME-FROM.
            MOVE    SPACES    TO   LS-FNAME-TO.
